@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useState } from "react";
 import SearchBox from "../SearchBox/SearchBox";
 import TaskActions from "../TaskActions/TaskActions";
