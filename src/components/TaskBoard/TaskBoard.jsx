@@ -1,8 +1,20 @@
+import { useState } from "react";
 import SearchBox from "../SearchBox/SearchBox";
 import TaskActions from "../TaskActions/TaskActions";
 import TaskTable from "../TaskTable/TaskTable";
 
 const TaskBoard = () => {
+    const defaultTask = {
+        'id': crypto.randomUUID(),
+        'title': "Learn React Native",
+        'description':
+            "I want to Learn React such thanI can treat it like my slave and make it do whatever I want to do.",
+        'tags': ["web", "react", "js"],
+        'priority': "High",
+        'isFavourite': true,
+    };
+
+    const [tasks, setTasks] = useState([defaultTask]);
     return (
         <section className="mb-20" id="tasks">
 
@@ -17,7 +29,7 @@ const TaskBoard = () => {
                     <TaskActions />
 
                     {/* Task Table */}
-                    <TaskTable />
+                    <TaskTable tasks={tasks}/>
                 </div>
             </div>
         </section>
