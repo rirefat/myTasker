@@ -7,6 +7,9 @@ const Header = () => {
                 <a href="/">
                     <img className="h-[45px]" src={logo} alt="myTasker Logo" />
                 </a>
+                {/* <a href="/">
+                    <img className="h-[45px]" src={logo} alt="myTasker Logo" />
+                </a> */}
             </div>
         </nav>
     );
