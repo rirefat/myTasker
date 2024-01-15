@@ -1,10 +1,11 @@
+import Header from "./components/Header/Header";
 
 
 const App = () => {
   return (
-    <div>
-      <h1 className="text-3xl">Initial Setup</h1>
-    </div>
+    <>
+      <Header/>
+    </>
   );
 };
 
