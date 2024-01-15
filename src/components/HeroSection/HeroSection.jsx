@@ -12,7 +12,7 @@ const HeroSection = () => {
                             myTasker
                         </h1>
                         <p className="text-lg my-2 opacity-60">
-                            Effortlessly Organize, Prioritize, and Conquer Tasks with Tasker - Your Personal Productivity Ally for
+                            Effortlessly Organize, Prioritize, and Conquer Tasks with myTasker react web app: Your Personal Productivity Ally for
                             Seamless Goal Achievement and Stress-Free Task Management.
                         </p>
                     </div>
