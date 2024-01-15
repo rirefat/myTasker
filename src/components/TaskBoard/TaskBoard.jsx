@@ -2,6 +2,7 @@ import { useState } from "react";
 import SearchBox from "../SearchBox/SearchBox";
 import TaskActions from "../TaskActions/TaskActions";
 import TaskTable from "../TaskTable/TaskTable";
+import Modal from "../Modal/Modal";
 
 const TaskBoard = () => {
     const defaultTask = {
@@ -14,10 +15,16 @@ const TaskBoard = () => {
         'isFavourite': true,
     };
 
+    // function handleAddTasks(){
+    //     console.log("task added");
+    // }
+
     const [tasks, setTasks] = useState([defaultTask]);
+    const [modalShown, setModalShown] = useState(false);
+
     return (
         <section className="mb-20" id="tasks">
-
+            {modalShown && <Modal closeModal={()=>setModalShown(false)}/>}
             <div className="container">
                 {/* //<!-- Search Box --> */}
                 <div className="p-2 flex justify-end">
@@ -26,7 +33,7 @@ const TaskBoard = () => {
 
                 <div className="rounded-xl border border-[rgba(206,206,206,0.12)] bg-[#1D212B] px-6 py-8 md:px-9 md:py-16">
                     {/* Task Actions */}
-                    <TaskActions />
+                    <TaskActions onAddTasks={()=>setModalShown(true)}/>
 
                     {/* Task Table */}
                     <TaskTable tasks={tasks}/>
