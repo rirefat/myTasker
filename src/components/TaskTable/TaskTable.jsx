@@ -4,6 +4,7 @@ const TaskTable = () => {
     return (
         <div className="overflow-auto">
             <table className="table-fixed overflow-auto xl:w-full">
+                {/* Table Head */}
                 <thead>
                     <tr>
                         <th className="p-4 pb-8 text-sm font-semibold capitalize w-[48px]"></th>
@@ -14,6 +15,8 @@ const TaskTable = () => {
                         <th className="p-4 pb-8 text-sm font-semibold capitalize md:w-[100px]"> Options </th>
                     </tr>
                 </thead>
+
+                {/* Table Body */}
                 <tbody>
                     <tr className="border-b border-[#2E3443] [&>td]:align-baseline [&>td]:px-4 [&>td]:py-2">
                         <td><svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-star" width="24"
@@ -54,6 +57,7 @@ const TaskTable = () => {
                             </div>
                         </td>
                     </tr>
+
                     <tr className="border-b border-[#2E3443] [&>td]:align-baseline [&>td]:px-4 [&>td]:py-2">
                         <td><svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-star" width="24"
                             height="24" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none"
@@ -95,6 +99,7 @@ const TaskTable = () => {
                             </div>
                         </td>
                     </tr>
+
                     <tr className="border-b border-[#2E3443] [&>td]:align-baseline [&>td]:px-4 [&>td]:py-2">
                         <td><svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-star" width="24"
                             height="24" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none"
@@ -135,6 +140,7 @@ const TaskTable = () => {
                             </div>
                         </td>
                     </tr>
+
                     <tr className="border-b border-[#2E3443] [&>td]:align-baseline [&>td]:px-4 [&>td]:py-2">
                         <td><svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-star" width="24"
                             height="24" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none"
