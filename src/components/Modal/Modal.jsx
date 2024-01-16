@@ -39,7 +39,7 @@ return (
     <>
         <div className="bg-black opacity-80 h-screen w-full z-10 absolute top-0 left-0"></div>
         <div className="absolute top-10 left-1/4 z-10 mx-auto my-10 w-full max-w-[740px] rounded-xl border border-[#FEFBFB]/[36%] bg-[#191D26] p-9 max-md:px-4 lg:my-20 lg:p-11">
-            <h2 className="mb-9 text-center text-2xl font-bold text-white lg:mb-11 lg:text-[28px]">Add New Task <span className="font-bold absolute top-10 right-10 cursor-pointer" onClick={()=>closeModal(false)}><RxCross2 color="red" /></span></h2>
+            <h2 className="mb-9 text-center text-2xl font-bold text-white lg:mb-11 lg:text-[28px]">Add New Task <span className="font-bold absolute top-10 right-10 cursor-pointer hover:scale-125 fond-bold" onClick={()=>closeModal(false)}><RxCross2 color="red" /></span></h2>
 
             {/* <!-- inputs --> */}
             <div className="space-y-9 text-white lg:space-y-10">
@@ -109,12 +109,12 @@ return (
             <div className="mt-16 flex justify-center lg:mt-20 gap-4">
                 <button
                     type="submit"
-                    className="rounded bg-blue-600 px-4 py-2 text-white transition-all hover:opacity-80"
+                    className="rounded bg-blue-600 hover:bg-blue-700 px-4 py-2 text-white transition-all hover:opacity-80"
                     onClick={() => onSave(task)}
                 >Add Task</button>
                 <button
                     type="submit"
-                    className="rounded bg-red-600 px-4 py-2 text-white transition-all hover:opacity-80"
+                    className="rounded bg-red-600 hover:bg-red-700 px-4 py-2 text-white transition-all hover:opacity-80"
                     onClick={handleClear}
                 >Reset Form</button>
             </div>
