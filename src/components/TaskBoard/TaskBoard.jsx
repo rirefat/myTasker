@@ -4,6 +4,7 @@ import SearchBox from "../SearchBox/SearchBox";
 import TaskActions from "../TaskActions/TaskActions";
 import TaskTable from "../TaskTable/TaskTable";
 import Modal from "../Modal/Modal";
+import noDataImg from "../../assets/noData.svg";
 
 const TaskBoard = () => {
     const defaultTask = {
@@ -36,7 +37,7 @@ const TaskBoard = () => {
     const [tasks, setTasks] = useState([defaultTask]);
     const [modalShown, setModalShown] = useState(false);
     const [taskToUpdate, setTaskToUpdate] = useState(null);
-    
+
 
     function handleTaskEdit(task) {
         setTaskToUpdate(task);
@@ -48,16 +49,16 @@ const TaskBoard = () => {
         setTaskToUpdate(null);
     }
 
-    function handleDeleteTask(comingTask){
-        setTasks( tasks.filter(task=>task.id!=comingTask.id));
+    function handleDeleteTask(comingTask) {
+        setTasks(tasks.filter(task => task.id != comingTask.id));
     }
 
-    function handleDeleteAll(){
+    function handleDeleteAll() {
         setTasks([]);
     }
 
-    function handleFavourite(taskID){
-        const taskIndex = tasks.findIndex(task=>task.id===taskID);
+    function handleFavourite(taskID) {
+        const taskIndex = tasks.findIndex(task => task.id === taskID);
         const newTasksList = [...tasks];
         newTasksList[taskIndex].isFavourite = !newTasksList[taskIndex].isFavourite;
         setTasks(newTasksList);
@@ -75,10 +76,17 @@ const TaskBoard = () => {
 
                 <div className="rounded-xl border border-[rgba(206,206,206,0.12)] bg-[#1D212B] px-6 py-8 md:px-9 md:py-16">
                     {/* Task Actions */}
-                    <TaskActions onAddTasks={() => setModalShown(true)} onDeleteAll={handleDeleteAll}/>
+                    <TaskActions onAddTasks={() => setModalShown(true)} onDeleteAll={handleDeleteAll} />
 
                     {/* Task Table */}
-                    <TaskTable tasks={tasks} onEdit={handleTaskEdit} onDelete={handleDeleteTask} onFavourite={handleFavourite}/>
+                    {
+                        tasks.length > 0 ?
+                            <TaskTable tasks={tasks} onEdit={handleTaskEdit} onDelete={handleDeleteTask} onFavourite={handleFavourite} /> :
+                            <div className="w-full flex justify-center items-center gap-10">
+                                <img src={noDataImg} className="w-1/4" />
+                                <p className="font-light text-3xl">No pending task!</p>
+                            </div>
+                    }
                 </div>
             </div>
         </section>

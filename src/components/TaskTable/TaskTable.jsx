@@ -24,7 +24,7 @@ const TaskTable = ({ tasks, onEdit, onDelete, onFavourite }) => {
                         // eslint-disable-next-line react/prop-types
                         tasks.map(task => (
                             <tr key={task.id} className="border-b border-[#2E3443] [&>td]:align-baseline [&>td]:px-4 [&>td]:py-2">
-                                <td onClick={()=>onFavourite(task.id)} className="scale-150 cursor-pointer">
+                                <td onClick={()=>onFavourite(task.id)} className="scale-100 cursor-pointer">
                                     <button>{task.isFavourite ? <FaStar color="yellow" /> : <FaStar color="gray" />}</button>
                                 </td>
                                 <td>{task.title}</td>
