@@ -1,7 +1,7 @@
 import { FaStar } from "react-icons/fa";
 
 // eslint-disable-next-line react/prop-types
-const TaskTable = ({ tasks }) => {
+const TaskTable = ({ tasks, onEdit }) => {
 
     return (
         <div className="overflow-auto">
@@ -24,7 +24,7 @@ const TaskTable = ({ tasks }) => {
                         // eslint-disable-next-line react/prop-types
                         tasks.map(task => (
                             <tr key={task.id} className="border-b border-[#2E3443] [&>td]:align-baseline [&>td]:px-4 [&>td]:py-2">
-                                <td>{task.isFavourite ? <FaStar color="yellow"/> : <FaStar color="gray"/>}</td>
+                                <td>{task.isFavourite ? <FaStar color="yellow" /> : <FaStar color="gray" />}</td>
                                 <td>{task.title}</td>
                                 <td>
                                     <div>{task.description}</div>
@@ -45,7 +45,7 @@ const TaskTable = ({ tasks }) => {
                                 <td>
                                     <div className="flex items-center justify-center space-x-3">
                                         <button className="text-red-500">Delete</button>
-                                        <button className="text-blue-500">Edit</button>
+                                        <button className="text-blue-500" onClick={()=>onEdit(task)}>Edit</button>
                                     </div>
                                 </td>
                             </tr>
