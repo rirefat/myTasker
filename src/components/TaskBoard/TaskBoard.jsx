@@ -16,16 +16,16 @@ const TaskBoard = () => {
         'isFavourite': true,
     };
 
-    // function handleAddTasks(){
-    //     console.log("task added");
-    // }
+    function handleAddTasks(task){
+        if(task.title.length>0) setModalShown(false);
+    }
 
     const [tasks, setTasks] = useState([defaultTask]);
     const [modalShown, setModalShown] = useState(false);
 
     return (
         <section className="mb-20" id="tasks">
-            {modalShown && <Modal closeModal={()=>setModalShown(false)}/>}
+            {modalShown && <Modal closeModal={()=>setModalShown(false)} onSave={handleAddTasks}/>}
             <div className="container">
                 {/* //<!-- Search Box --> */}
                 <div className="p-2 flex justify-end">
