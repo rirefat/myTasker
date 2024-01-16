@@ -36,6 +36,7 @@ const TaskBoard = () => {
     const [tasks, setTasks] = useState([defaultTask]);
     const [modalShown, setModalShown] = useState(false);
     const [taskToUpdate, setTaskToUpdate] = useState(null);
+    
 
     function handleTaskEdit(task) {
         setTaskToUpdate(task);
@@ -55,6 +56,14 @@ const TaskBoard = () => {
         setTasks([]);
     }
 
+    function handleFavourite(taskID){
+        const taskIndex = tasks.findIndex(task=>task.id===taskID);
+        const newTasksList = [...tasks];
+        newTasksList[taskIndex].isFavourite = !newTasksList[taskIndex].isFavourite;
+        setTasks(newTasksList);
+        console.log(taskIndex)
+    }
+
     return (
         <section className="mb-20" id="tasks">
             {modalShown && <Modal closeModal={handleModalClose} onSave={handleAddTasks} taskToUpdate={taskToUpdate} />}
@@ -69,7 +78,7 @@ const TaskBoard = () => {
                     <TaskActions onAddTasks={() => setModalShown(true)} onDeleteAll={handleDeleteAll}/>
 
                     {/* Task Table */}
-                    <TaskTable tasks={tasks} onEdit={handleTaskEdit} onDelete={handleDeleteTask}/>
+                    <TaskTable tasks={tasks} onEdit={handleTaskEdit} onDelete={handleDeleteTask} onFavourite={handleFavourite}/>
                 </div>
             </div>
         </section>
