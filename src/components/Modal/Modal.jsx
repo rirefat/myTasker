@@ -4,6 +4,7 @@ import { RxCross2 } from "react-icons/rx";
 // eslint-disable-next-line react/prop-types
 const Modal = ({ closeModal, onSave }) => {
     const [task, setTask] = useState({
+        'id': crypto.randomUUID(),
         'title': "",
         'description': "",
         'tags': [],
@@ -38,7 +39,7 @@ return (
     <>
         <div className="bg-black opacity-80 h-screen w-full z-10 absolute top-0 left-0"></div>
         <div className="absolute top-10 left-1/4 z-10 mx-auto my-10 w-full max-w-[740px] rounded-xl border border-[#FEFBFB]/[36%] bg-[#191D26] p-9 max-md:px-4 lg:my-20 lg:p-11">
-            <h2 className="mb-9 text-center text-2xl font-bold text-white lg:mb-11 lg:text-[28px]">Add New Task <span className="font-bold absolute top-10 right-10 cursor-pointer" onClick={closeModal}><RxCross2 color="red" /></span></h2>
+            <h2 className="mb-9 text-center text-2xl font-bold text-white lg:mb-11 lg:text-[28px]">Add New Task <span className="font-bold absolute top-10 right-10 cursor-pointer" onClick={()=>closeModal(false)}><RxCross2 color="red" /></span></h2>
 
             {/* <!-- inputs --> */}
             <div className="space-y-9 text-white lg:space-y-10">
@@ -97,9 +98,9 @@ return (
                             required
                         >
                             <option value="">Select Priority</option>
-                            <option value="low">Low</option>
-                            <option value="medium">Medium</option>
-                            <option value="high">High</option>
+                            <option value="Low">Low</option>
+                            <option value="Medium">Medium</option>
+                            <option value="High">High</option>
                         </select>
                     </div>
                 </div>
