@@ -47,6 +47,10 @@ const TaskBoard = () => {
         setTaskToUpdate(null);
     }
 
+    function handleDeleteTask(comingTask){
+        setTasks( tasks.filter(task=>task.id!=comingTask.id));
+    }
+
     return (
         <section className="mb-20" id="tasks">
             {modalShown && <Modal closeModal={handleModalClose} onSave={handleAddTasks} taskToUpdate={taskToUpdate} />}
@@ -61,7 +65,7 @@ const TaskBoard = () => {
                     <TaskActions onAddTasks={() => setModalShown(true)} />
 
                     {/* Task Table */}
-                    <TaskTable tasks={tasks} onEdit={handleTaskEdit} />
+                    <TaskTable tasks={tasks} onEdit={handleTaskEdit} onDelete={handleDeleteTask}/>
                 </div>
             </div>
         </section>
